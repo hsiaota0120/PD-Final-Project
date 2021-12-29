@@ -31,9 +31,9 @@ restaurant :: restaurant()
 	cost = new int[50];
 	for(int i = 0; i < 50; i++)
 	{
-		name_r[i] = "ç„¡";
-		address[i] = "ç„¡";
-		type[i] = "ç„¡";
+		name_r[i] = "µL";
+		address[i] = "µL";
+		type[i] = "µL";
 		cost[i] = 0;	
 	}
 }
@@ -66,43 +66,43 @@ int main()
 	ofstream myFile;
 	ifstream inFile;
 		
-	cout << "è«‹å•æ˜¯å¦ç‚ºé¦–æ¬¡ä½¿ç”¨ï¼Ÿ\n";
+	cout << "½Ğ°İ¬O§_¬°­º¦¸¨Ï¥Î¡H\n";
 	cin >> a ;
-	if(a == "æ˜¯")
+	if(a == "¬O")
 	{
-		cout << "è«‹è¼¸å…¥æš±ç¨±\n";
+		cout << "½Ğ¿é¤J¼ÊºÙ\n";
 		cin >> name;
 		name = name + ".txt";
 		myFile.open(name, ios::app);
-		cout << "è«‹å•ä½ ç¾åœ¨ä½æ–¼å“ªä¸€å€‹æ•™å­¸é¤¨ï¼Ÿ\n";
+		cout << "½Ğ°İ§A²{¦b¦ì©ó­ş¤@­Ó±Ğ¾ÇÀ]¡H\n";
 		cin >> place;
 		place_plus = place + ".txt";
 		inFile.open(place_plus);
 		int count = 0;
 		string z, x, v;
 		int g;
-		while(inFile >> z >> x >> v >> g)//è®€ä¸­æ–‡å­—å‡ºç¾å•é¡Œ!!! 
+		while(inFile >> z >> x >> v >> g)//Åª¤¤¤å¦r¥X²{°İÃD!!! 
 		{
 			//cout << z << "\n";
 			item.change(z, x, v, g, count);
 			count++;	
-		}//å•é¡Œåœ¨ä¸çŸ¥é“è¦è®€å¹¾å®¶è³‡æ–™
-		cout << "è«‹å•æƒ³è¦ä»€éº¼é¤å»³é¡åˆ¥ï¼Ÿ\n";
+		}//°İÃD¦b¤£ª¾¹D­nÅª´X®a¸ê®Æ
+		cout << "½Ğ°İ·Q­n¤°»òÀ\ÆUÃş§O¡H\n";
 		cin >> type;
-		cout << "è«‹å•é ç®—æ˜¯å¤šå°‘ï¼Ÿ\n";
+		cout << "½Ğ°İ¹wºâ¬O¦h¤Ö¡H\n";
 		cin >> cost;
 
 		int* rest_num_array = new int[count];
 	
-		srand(time(NULL)); //çµ¦å®šäº‚æ¨¹ç¨®å­ 
+		srand(time(NULL)); //µ¹©w¶Ã¾ğºØ¤l 
     
     		for(int i = 0; i < count ; i++)
     		{                        
-        		rest_num_array[i] = rand()%(count);  // rand()%(æœ€å¤§å€¼-æœ€å°å€¼+1)+ æœ€å°å€¼ å€¼æ”¾é€²é™£åˆ— 
+        		rest_num_array[i] = rand()%(count);  // rand()%(³Ì¤j­È-³Ì¤p­È+1)+ ³Ì¤p­È ­È©ñ¶i°}¦C 
         
-        		for(int j=0; j < i; j++)  //è·‘æˆ‘ä¹‹å‰å·²ç¶“ç”¢ç”Ÿçš„çµæœ 
+        		for(int j=0; j < i; j++)  //¶]§Ú¤§«e¤w¸g²£¥Íªºµ²ªG 
         		{
-             			if(rest_num_array[i] == rest_num_array[j])  //æ¯”è¼ƒå€¼æ˜¯å¦å·²ç¶“å­˜åœ¨ 
+             			if(rest_num_array[i] == rest_num_array[j])  //¤ñ¸û­È¬O§_¤w¸g¦s¦b 
              			{
                  			i--;
                  			break;
@@ -111,17 +111,17 @@ int main()
     		}
 		
 
-		for(int i = 0; i < count; i++)//ç›®å‰ç¼ºä¹éš¨æ©Ÿæ€§ 
+		for(int i = 0; i < count; i++)//¥Ø«e¯Ê¥FÀH¾÷©Ê 
 		{ 
 
 			cout <<  answer_name << " " << answer_address << " " 
 				<< answer_type << " " << answer_cost << endl;
 			
-			if(item.check(type, rest_num_array[i]) && item.check(cost, rest_num_array[i]))//æ²’æœ‰åšå‡ºäºŒæŒ‘ä¸€ 
+			if(item.check(type, rest_num_array[i]) && item.check(cost, rest_num_array[i]))//¨S¦³°µ¥X¤G¬D¤@ 
 			{
 				char choose;
-				cout << "è«‹å•ä½ è¦é€™å®¶å—ï¼Ÿ(Y/N)\n";
-				cout <<  "åº—å®¶åç¨±ï¼š" << item.show1(rest_num_array[i]) << " åœ°å€ï¼š" << item.show2(rest_num_array[i]);
+				cout << "½Ğ°İ§A­n³o®a¶Ü¡H(Y/N)\n";
+				cout <<  "©±®a¦WºÙ¡G" << item.show1(rest_num_array[i]) << " ¦a§}¡G" << item.show2(rest_num_array[i]);
 				cin >> choose;
 				
 				if(choose == 'Y')
@@ -140,12 +140,12 @@ int main()
 			
 		}
 		if(answer_name.length() == 0) 
-			cout << "è«‹ä¸‹æ¬¡å†ä¾†";
+			cout << "½Ğ¤U¦¸¦A¨Ó";
 		else
 		{
 			char d;
-			cout << "æœ€çµ‚é¸æ“‡ç‚º" << answer_name << "\n";
-			cout <<	"æ˜¯å¦æ”¶è—é¸å‡ºçš„restaurantï¼Ÿ(Y/N)\n";
+			cout << "³Ì²×¿ï¾Ü¬°" << answer_name << "\n";
+			cout <<	"¬O§_¦¬ÂÃ¿ï¥Xªºrestaurant¡H(Y/N)\n";
 			cin >> d;
 			if(d == 'Y')
 				myFile << answer_name << " " << answer_address << " " << answer_type << " " << answer_cost << "\n";
@@ -156,21 +156,21 @@ int main()
 		
 		
 	}
-	else if(a == "å¦")
+	else if(a == "§_")
 	{
 		string name_1;
-		cout << "è«‹è¼¸å…¥ä½ çš„æš±ç¨±\n";
+		cout << "½Ğ¿é¤J§Aªº¼ÊºÙ\n";
 		cin >> name;
 		name_1 = name + ".txt";
 		ifstream inFile_False(name_1);
 		if(!inFile_False)
 		{
-			cout << "å¾ˆæŠ±æ­‰ï¼Œç„¡æ³•æ‰¾åˆ°æ‚¨çš„æª”æ¡ˆ";
+			cout << "«Ü©êºp¡AµLªk§ä¨ì±zªºÀÉ®×";
 			exit(1);
 		}
 		else 
 		{
-			cout << "ä½ çš„æ”¶è—åå–®å¦‚ä¸‹ï¼š\n";
+			cout << "§Aªº¦¬ÂÃ¦W³æ¦p¤U¡G\n";
 			string a, b, c;
 			int e;
 			char f = 0;
@@ -178,40 +178,40 @@ int main()
 			{
 				cout << a << " " << b << " " << c << " " << e << "\n";
 			}
-			cout << "è«‹å•ä½ é‚„è¦æ‰¾restaurantå—ï¼Ÿ(Y/N)\n";
+			cout << "½Ğ°İ§AÁÙ­n§ärestaurant¶Ü¡H(Y/N)\n";
 			cin >> f;
 			if(f == 'Y')
 			{
 				myFile.open(name_1, ios::app);
-				cout << "è«‹å•ä½ ç¾åœ¨ä½æ–¼å“ªä¸€å€‹æ•™å­¸é¤¨ï¼Ÿ";
+				cout << "½Ğ°İ§A²{¦b¦ì©ó­ş¤@­Ó±Ğ¾ÇÀ]¡H";
 				cin >> place;
 				place_plus = place + ".txt";
 				inFile.open(place_plus);
 				int count = 0;
 				string z, x, v;
 				int g;
-				while(inFile >> z >> x >> v >> g)//è®€ä¸­æ–‡å­—å‡ºç¾å•é¡Œ!!! 
+				while(inFile >> z >> x >> v >> g)//Åª¤¤¤å¦r¥X²{°İÃD!!! 
 				{
 				//cout << z << "\n";
 					item.change(z, x, v, g, count);
 					count++;	
-				}//å•é¡Œåœ¨ä¸çŸ¥é“è¦è®€å¹¾å®¶è³‡æ–™ 
-				cout << "è«‹å•æƒ³è¦ä»€éº¼restauranté¡åˆ¥ï¼Ÿ\n";
+				}//°İÃD¦b¤£ª¾¹D­nÅª´X®a¸ê®Æ 
+				cout << "½Ğ°İ·Q­n¤°»òrestaurantÃş§O¡H\n";
 				cin >> type;
-				cout << "è«‹å•é ç®—æ˜¯å¤šå°‘ï¼Ÿ\n";
+				cout << "½Ğ°İ¹wºâ¬O¦h¤Ö¡H\n";
 				cin >> cost;
 
 				int* rest_num_array = new int[count];
 	
-				srand(time(NULL)); //çµ¦å®šäº‚æ¨¹ç¨®å­ 
+				srand(time(NULL)); //µ¹©w¶Ã¾ğºØ¤l 
 		
 				for(int i = 0; i < count ; i++)
 				{                        
-					rest_num_array[i] = rand()%(count);  // rand()%(æœ€å¤§å€¼-æœ€å°å€¼+1)+ æœ€å°å€¼ å€¼æ”¾é€²é™£åˆ— 
+					rest_num_array[i] = rand()%(count);  // rand()%(³Ì¤j­È-³Ì¤p­È+1)+ ³Ì¤p­È ­È©ñ¶i°}¦C 
 			
-					for(int j=0; j < i; j++)  //è·‘æˆ‘ä¹‹å‰å·²ç¶“ç”¢ç”Ÿçš„çµæœ 
+					for(int j=0; j < i; j++)  //¶]§Ú¤§«e¤w¸g²£¥Íªºµ²ªG 
 					{
-						if(rest_num_array[i] == rest_num_array[j])  //æ¯”è¼ƒå€¼æ˜¯å¦å·²ç¶“å­˜åœ¨ 
+						if(rest_num_array[i] == rest_num_array[j])  //¤ñ¸û­È¬O§_¤w¸g¦s¦b 
 						{
 							i--;
 							break;
@@ -219,13 +219,13 @@ int main()
 					}
 				}
 
-				for(int i = 0; i < count; i++)//ç›®å‰ç¼ºä¹éš¨æ©Ÿæ€§ 
+				for(int i = 0; i < count; i++)//¥Ø«e¯Ê¥FÀH¾÷©Ê 
 				{
-					if(item.check(type, rest_num_array[i]) && item.check(cost, rest_num_array[i]))//æ²’æœ‰åšå‡ºäºŒæŒ‘ä¸€ 
+					if(item.check(type, rest_num_array[i]) && item.check(cost, rest_num_array[i]))//¨S¦³°µ¥X¤G¬D¤@ 
 					{
 						char choose;
-						cout << "è«‹å•ä½ è¦é€™å®¶å—ï¼Ÿ(Y/N)\n";
-						cout <<  "åº—å®¶åç¨±ï¼š" << item.show1(rest_num_array[i]) << " åœ°å€ï¼š" << item.show2(rest_num_array[i]);
+						cout << "½Ğ°İ§A­n³o®a¶Ü¡H(Y/N)\n";
+						cout <<  "©±®a¦WºÙ¡G" << item.show1(rest_num_array[i]) << " ¦a§}¡G" << item.show2(rest_num_array[i]);
 						cin >> choose;	
 						if(choose == 'Y')
 						{
@@ -241,12 +241,12 @@ int main()
 				}	
 			
 				if(answer_name.length() == 0)
-					cout << "è«‹ä¸‹æ¬¡å†ä¾†";
+					cout << "½Ğ¤U¦¸¦A¨Ó";
 				else
 				{
 					char d;
-					cout << "æœ€çµ‚é¸æ“‡ç‚º" << answer_name << "\n";
-					cout <<	"æ˜¯å¦æ”¶è—é¸å‡ºçš„restaurantï¼Ÿ(Y/N)\n";
+					cout << "³Ì²×¿ï¾Ü¬°" << answer_name << "\n";
+					cout <<	"¬O§_¦¬ÂÃ¿ï¥Xªºrestaurant¡H(Y/N)\n";
 					cin >> d;
 					if(d == 'Y')
 						myFile << answer_name << " " << answer_address << " " << answer_type << " " << answer_cost << "\n";
@@ -262,10 +262,10 @@ int main()
 		}
 	 }
 	
-	/*ç›®å‰å•é¡Œ:ç¼ºä¹éš¨æ©Ÿæ€§
-	           æ”¶è—åå–®æœ‰å¯èƒ½é‡è¤‡
-			   Macæœ‰å¯èƒ½é–‹æ™‚ä¸­æ–‡å­—æœƒè®Šæˆäº‚ç¢¼
-			   ç›®å‰äºŒé¸ä¸€çš„éƒ¨åˆ† é‚„æ²’è¾¦æ³•åšå‡ºä¾†
-			   ç›®å‰æ¯ä¸€å®¶çš„è³‡æ–™é‡éœ€ç›¸åŒ(å› ç‚ºæˆ‘çŸ©é™£è¨­10) 
+	/*¥Ø«e°İÃD:¯Ê¥FÀH¾÷©Ê
+	           ¦¬ÂÃ¦W³æ¦³¥i¯à­«½Æ
+			   Mac¦³¥i¯à¶}®É¤¤¤å¦r·|ÅÜ¦¨¶Ã½X
+			   ¥Ø«e¤G¿ï¤@ªº³¡¤À ÁÙ¨S¿ìªk°µ¥X¨Ó
+			   ¥Ø«e¨C¤@®aªº¸ê®Æ¶q»İ¬Û¦P(¦]¬°§Ú¯x°}³]10) 
 	*/ 
 }
