@@ -219,8 +219,10 @@ int main()
 					}
 				}
 
-				for(int i = 0; i < count; i++)//目前缺乏隨機性 
+				for(int i = 0; i < count; i++)
 				{
+					int* ptr1 = rest_num_array;
+
 					if(item.check(type, rest_num_array[i]) && item.check(cost, rest_num_array[i]))//沒有做出二挑一 
 					{
 						char choose;
@@ -262,10 +264,5 @@ int main()
 		}
 	 }
 	
-	/*目前問題:缺乏隨機性
-	           收藏名單有可能重複
-			   Mac有可能開時中文字會變成亂碼
-			   目前二選一的部分 還沒辦法做出來
-			   目前每一家的資料量需相同(因為我矩陣設10) 
-	*/ 
+	 
 }
