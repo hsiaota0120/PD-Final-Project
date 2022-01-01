@@ -68,15 +68,15 @@ int main()
     ofstream myFile;
     ifstream inFile;
 
-    cout << "請問是否為首次使用？\n";
+    cout << "請問是否為首次使用？(Y/N)\n";
     cin >> a;
-    if (a == "是")
+    if (a == "Y")
     {
-        cout << "請輸入暱稱\n";
+        cout << "請輸入使用者名稱\n";
         cin >> name;
         name = name + ".txt";
         myFile.open(name, ios::app);
-        cout << "請問你現在位於哪一個教學館？\n";
+        cout << "請問你現在在哪？\n";
         cin >> place;
         place_plus = place + ".txt";
         inFile.open(place_plus);
@@ -89,7 +89,7 @@ int main()
             item.change(z, x, v, g, count);
             count++;
         } //問題在不知道要讀幾家資料
-        cout << "請問想要什麼restaurant類別？\n";
+        cout << "請問想要吃什麼類型的餐廳？\n";
         cin >> type;
         cout << "請問預算是多少？\n";
         cin >> cost;
@@ -97,7 +97,6 @@ int main()
         int *rest_num_array = new int[count];
 
         srand(time(NULL)); //給定亂樹種子
-        cout << "here";
         for (int i = 0; i < count; i++)
         {
             rest_num_array[i] = rand() % (count); // rand()%(最大值-最小值+1)+ 最小值 值放進陣列
@@ -111,11 +110,8 @@ int main()
                 }
             }
         }
-        /*for(int i = 0; i < count; i++)(檢查)
-        {
-            cout << rest_num_array[i] << "\n";
-        }*/
-        cout << "hi";
+        
+        
         vector<int> candi;
         for (int i = 0; i < count; i++)
         {
@@ -135,8 +131,7 @@ int main()
 
         while (!(candi.size() <= 1))
         {
-            // bool chosen[count] = {1};
-            // cout << chosen[2];
+           
             bool chosen[count];
             for (int i = 0; i < count; i++)
                 chosen[i] = 1;
@@ -149,7 +144,7 @@ int main()
                     {
 
                         char choose;
-                        cout << "請問你要這家嗎？(1/2)\n";
+                        cout << "比較想吃哪一家？(輸入1/2)\n";
                         cout << "店家名稱1：" << item.show1(candi[i]) << " 地址1：" << item.show2(candi[i]) << "\n";
                         cout << "店家名稱2：" << item.show1(candi[i + 1]) << " 地址2：" << item.show2(candi[i + 1]) << "\n";
                         cin >> choose;
@@ -199,25 +194,25 @@ int main()
         }
 
         if (answer_name.length() == 0)
-            cout << "請下次再來";
+            cout << "Oops沒有你要的餐廳";
         else
         {
             char d;
             cout << "最終選擇為"
                  << " 『" << answer_name << "』\n";
-            cout << "是否收藏選出的restaurant？(Y/N)\n";
+            cout << "是否收藏選出的餐廳？(Y/N)\n";
             cin >> d;
             if (d == 'Y')
             {
                 myFile << answer_name << " " << answer_address << " " << answer_type << " " << answer_cost << "\n";
-                cout << "結束~";
+                cout << "Done!";
             }
             else if (d == 'N')
                 cout << "歡迎再次使用 (^_^)";
             // consider the invalid situation
         }
     }
-    else if (a == "否")
+    else if (a == "N")
     {
         string name_1;
         cout << "請輸入你的暱稱\n";
